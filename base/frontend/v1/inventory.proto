@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package inventory.base.v1;
+package inventory.base.frontend.v1;
 
 import "google/protobuf/timestamp.proto";
 
