@@ -4,7 +4,7 @@ package inventory.base.frontend.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/AskatNa/apis-gen-inventory-service/base/v1;inventorybase";
+option go_package = "github.com/AskatNa/apis-gen-inventory-service/base/frontend/v1;inventorybase";
 
 message Product {
   string id = 1;
