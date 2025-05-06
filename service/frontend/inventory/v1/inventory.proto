@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package inventory.service.v1;
 
-import "inventory/base/v1/inventory.proto";
+import "/base/frontend/v1/inventory.proto";
 import "google/protobuf/empty.proto";
 
 option go_package = "github.com/AskatNa/apis-gen-inventory-service/service/v1;inventorysvc";
@@ -25,7 +25,7 @@ service InventoryService {
 
 // Product Messages
 message CreateProductRequest {
-  inventory.base.v1.Product product = 1;
+  base.frontend.v1.Product product = 1;
 }
 
 message GetProductRequest {
@@ -33,7 +33,7 @@ message GetProductRequest {
 }
 
 message UpdateProductRequest {
-  inventory.base.v1.Product product = 1;
+  base.frontend.v1.Product product = 1;
 }
 
 message DeleteProductRequest {
@@ -41,23 +41,22 @@ message DeleteProductRequest {
 }
 
 message ListProductsRequest {
-  string category_id = 1; // optional filter
+  string category_id = 1; 
   int32 page_size = 2;
   string page_token = 3;
 }
 
 message ProductResponse {
-  inventory.base.v1.Product product = 1;
+  base.frontend.v1.Product product = 1;
 }
 
 message ListProductsResponse {
-  repeated inventory.base.v1.Product products = 1;
+  repeated base.frontend.v1.Product products = 1;
   string next_page_token = 2;
 }
 
-// Category Messages
 message CreateCategoryRequest {
-  inventory.base.v1.Category category = 1;
+  base.frontend.v1.Category category = 1;
 }
 
 message GetCategoryRequest {
@@ -65,7 +64,7 @@ message GetCategoryRequest {
 }
 
 message UpdateCategoryRequest {
-  inventory.base.v1.Category category = 1;
+  base.frontend.v1.Category category = 1;
 }
 
 message DeleteCategoryRequest {
@@ -78,10 +77,10 @@ message ListCategoriesRequest {
 }
 
 message CategoryResponse {
-  inventory.base.v1.Category category = 1;
+  base.frontend.v1.Category category = 1;
 }
 
 message ListCategoriesResponse {
-  repeated inventory.base.v1.Category categories = 1;
+  repeated base.frontend.v1.Category categories = 1;
   string next_page_token = 2;
 }
